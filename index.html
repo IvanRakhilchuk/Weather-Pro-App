@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Pro App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <main class="app">
+      <section class="hero-card">
+        <p class="badge">ЗАЛІКОВИЙ MINI PROJECT</p>
+        <h1>Weather Pro App</h1>
+        <p class="hero-text">
+          Сучасний застосунок погоди на JavaScript з API, пошуком міста,
+          геолокацією, прогнозом на 5 днів та історією пошуку.
+        </p>
+
+        <form id="weatherForm" class="weather-form">
+          <div class="input-wrap">
+            <label for="cityInput">Місто</label>
+            <input
+              type="text"
+              id="cityInput"
+              name="city"
+              placeholder="Наприклад: Kyiv"
+              required
+            />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">
+              Показати погоду
+            </button>
+            <button type="button" id="locationBtn" class="btn btn-secondary">
+              Моя геолокація
+            </button>
+            <button type="button" id="clearBtn" class="btn btn-secondary">
+              Очистити
+            </button>
+          </div>
+        </form>
+
+        <div id="message" class="message-box">
+          <span>Введи місто або використай геолокацію</span>
+        </div>
+      </section>
+
+      <section id="weatherSection" class="weather-grid hidden">
+        <div class="current-card card">
+          <div class="current-header">
+            <div>
+              <p class="mini-label">Поточна погода</p>
+              <h2 id="cityName">—</h2>
+              <p id="weatherDesc" class="muted">—</p>
+            </div>
+            <img
+              id="weatherIcon"
+              class="weather-icon"
+              src=""
+              alt="Іконка погоди"
+            />
+          </div>
+
+          <div class="temp-row">
+            <div class="temp-main">
+              <span id="temperature">--</span>
+              <small>°C</small>
+            </div>
+            <div class="feels-like">
+              Відчувається як <strong id="feelsLike">--</strong> °C
+            </div>
+          </div>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="detail-label">Вітер</span>
+              <strong id="windSpeed">--</strong>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Вологість</span>
+              <strong id="humidity">--</strong>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Тиск</span>
+              <strong id="pressure">--</strong>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Видимість</span>
+              <strong id="visibility">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast-card card">
+          <div class="section-head">
+            <h3>Прогноз на 5 днів</h3>
+          </div>
+          <div id="forecastList" class="forecast-list"></div>
+        </div>
+      </section>
+
+      <section class="history-card card">
+        <div class="section-head">
+          <h3>Історія пошуку</h3>
+          <button type="button" id="clearHistoryBtn" class="btn btn-small">
+            Очистити історію
+          </button>
+        </div>
+        <div id="historyList" class="history-list">
+          <div class="empty-state">Історія поки порожня</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
